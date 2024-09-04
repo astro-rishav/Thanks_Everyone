@@ -110,6 +110,24 @@ input[type="submit"]:hover {
     color: #003366;
 }
 
+#displayData {
+    background: #e6f7ff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Initially hidden */
+}
+
+#displayData.active {
+    display: block; /* Display when data is available */
+}
+
+#displayData p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
 footer {
     background: #003366;
     color: #fff;
