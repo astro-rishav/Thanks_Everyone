@@ -15,11 +15,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     .then(response => response.json())
     .then(data => {
         console.log('Success:', data);
-
-        // Show the "Thanks for joining us!" message
-        const thanksMessage = document.getElementById('thanksMessage');
-        thanksMessage.style.display = 'block';
-        thanksMessage.textContent = 'Thanks for joining us!';
+        alert('Message sent successfully!');
     })
     .catch(error => {
         console.error('Error:', error);
