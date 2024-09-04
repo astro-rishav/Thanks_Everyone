@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Shubham</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+    <script src="script.js" defer></script> <!-- JavaScript file -->
 </head>
 <body>
     <header>
@@ -24,7 +24,7 @@
         <section>
             <h2>Get in Touch</h2>
             <p>If you have any questions or want to support Shubham's campaign, feel free to reach out!</p>
-            <form onsubmit="handleSubmit(event)">
+            <form id="contactForm">
                 <label for="name">Name:</label><br>
                 <input type="text" id="name" name="name" required><br>
                 <label for="email">Email:</label><br>
