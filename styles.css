@@ -1,9 +1,10 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background: #f4f4f4;
     color: #333;
+    line-height: 1.6;
 }
 
 header {
@@ -11,11 +12,12 @@ header {
     color: #fff;
     padding: 20px;
     text-align: center;
+    position: relative;
 }
 
 header .banner {
     width: 100%;
-    max-height: 200px;
+    max-height: 300px;
     object-fit: cover;
 }
 
@@ -36,18 +38,23 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: color 0.3s, background 0.3s;
 }
 
 nav ul li a.active, nav ul li a:hover {
     color: #ffcc00;
+    background: rgba(255, 204, 0, 0.1);
 }
 
 main {
-    padding: 20px;
+    padding: 40px 20px;
     background: #fff;
-    margin: 20px auto;
-    max-width: 800px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    max-width: 1000px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 h1, h2 {
@@ -55,67 +62,79 @@ h1, h2 {
 }
 
 .profile-img {
-    max-width: 200px;
+    max-width: 250px;
     border-radius: 50%;
-    margin: 20px 0;
+    margin: 30px auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .cta-button {
     display: inline-block;
     background: #003366;
     color: #fff;
-    padding: 10px 20px;
+    padding: 15px 30px;
     text-decoration: none;
     border-radius: 5px;
-    transition: background 0.3s;
-    margin-top: 20px;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 30px;
     text-align: center;
+    font-size: 18px;
 }
 
 .cta-button:hover {
     background: #ffcc00;
     color: #003366;
+    transform: translateY(-3px);
 }
 
+/* Form styles */
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+    margin-top: 30px;
 }
 
 input[type="text"], input[type="email"], textarea {
-    padding: 10px;
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
     width: 100%;
     box-sizing: border-box;
+    background: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border-color: #003366;
 }
 
 input[type="submit"] {
     background: #003366;
     color: #fff;
     border: none;
-    padding: 10px;
+    padding: 15px;
     cursor: pointer;
     border-radius: 5px;
-    transition: background 0.3s;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.2s;
 }
 
 input[type="submit"]:hover {
     background: #ffcc00;
     color: #003366;
+    transform: translateY(-3px);
 }
 
+/* Styling for displayData */
 #displayData {
     background: #e6f7ff;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     display: none; /* Initially hidden */
 }
 
@@ -126,14 +145,79 @@ input[type="submit"]:hover {
 #displayData p {
     font-size: 18px;
     margin: 10px 0;
+    line-height: 1.6;
 }
 
+/* Specific styles for the thank-you section */
+.thank-you-section {
+    background: #003366;
+    color: #fff;
+    padding: 40px 20px;
+    margin: 40px auto;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.thank-you-section h2 {
+    font-size: 28px;
+    color: #ffcc00;
+    margin-bottom: 20px;
+}
+
+.thank-you-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.thank-you-section .cta-button {
+    margin-top: 20px;
+    background-color: #ffcc00;
+    color: #003366;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.thank-you-section .cta-button:hover {
+    background-color: #003366;
+    color: #ffcc00;
+}
+
+/* Footer styles */
 footer {
     background: #003366;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
     position: fixed;
     bottom: 0;
     width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
 }
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+
+    .cta-button {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+
+    .profile-img {
+        max-width: 150px;
+    }
+                                }
